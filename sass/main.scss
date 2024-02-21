@@ -1,6 +1,8 @@
 $bg-color: #F1F4FD;
 $thumb: #000;
 $track: #ccc;
+$white: #fff;
+$btn:#444;
 * {
     margin: 0;
     padding: 0;
@@ -68,6 +70,8 @@ body {
 }
 
 .slider-wrapper {
+    position: relative;
+
     .image-list{
         display: grid;
         gap: 18px;
@@ -85,6 +89,33 @@ body {
             width: 325px;
             height: 400px;
             object-fit: cover;
+        }
+    }
+
+    .slide-button{
+        position: absolute;
+        top: 50%;
+        height: 50px;
+        width: 50px;
+        color: $white;
+        border: none;
+        outline: none;
+        background: $thumb;
+        font-size: 2.2rem;
+        cursor: pointer;
+        border-radius: 50%;
+        transform: translateY(-50%);
+
+        &:hover {
+            background: $btn;
+        }
+
+        &#prev-slide {
+            left: -20px;
+        }
+
+        &#next-slide {
+            right: -20px;
         }
     }
 }
